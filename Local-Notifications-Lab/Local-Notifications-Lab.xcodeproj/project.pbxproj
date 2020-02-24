@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		8010CE4A240387810096D6BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010CE49240387810096D6BE /* AppDelegate.swift */; };
 		8010CE4C240387810096D6BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010CE4B240387810096D6BE /* SceneDelegate.swift */; };
-		8010CE4E240387810096D6BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010CE4D240387810096D6BE /* ViewController.swift */; };
+		8010CE4E240387810096D6BE /* SettingTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010CE4D240387810096D6BE /* SettingTimeController.swift */; };
 		8010CE51240387810096D6BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8010CE4F240387810096D6BE /* Main.storyboard */; };
 		8010CE53240387840096D6BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8010CE52240387840096D6BE /* Assets.xcassets */; };
 		8010CE56240387840096D6BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8010CE54240387840096D6BE /* LaunchScreen.storyboard */; };
 		8010CE5E2403895D0096D6BE /* ManageTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010CE5D2403895D0096D6BE /* ManageTimeViewController.swift */; };
+		8010CE6224038C8E0096D6BE /* PendingNotifs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010CE6124038C8E0096D6BE /* PendingNotifs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8010CE46240387810096D6BE /* Local-Notifications-Lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Local-Notifications-Lab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8010CE49240387810096D6BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8010CE4B240387810096D6BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8010CE4D240387810096D6BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8010CE4D240387810096D6BE /* SettingTimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTimeController.swift; sourceTree = "<group>"; };
 		8010CE50240387810096D6BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8010CE52240387840096D6BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8010CE55240387840096D6BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8010CE57240387840096D6BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8010CE5D2403895D0096D6BE /* ManageTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTimeViewController.swift; sourceTree = "<group>"; };
+		8010CE6124038C8E0096D6BE /* PendingNotifs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingNotifs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +62,8 @@
 			children = (
 				8010CE49240387810096D6BE /* AppDelegate.swift */,
 				8010CE4B240387810096D6BE /* SceneDelegate.swift */,
-				8010CE4D240387810096D6BE /* ViewController.swift */,
+				8010CE6124038C8E0096D6BE /* PendingNotifs.swift */,
+				8010CE4D240387810096D6BE /* SettingTimeController.swift */,
 				8010CE5D2403895D0096D6BE /* ManageTimeViewController.swift */,
 				8010CE4F240387810096D6BE /* Main.storyboard */,
 				8010CE52240387840096D6BE /* Assets.xcassets */,
@@ -142,7 +145,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8010CE5E2403895D0096D6BE /* ManageTimeViewController.swift in Sources */,
-				8010CE4E240387810096D6BE /* ViewController.swift in Sources */,
+				8010CE6224038C8E0096D6BE /* PendingNotifs.swift in Sources */,
+				8010CE4E240387810096D6BE /* SettingTimeController.swift in Sources */,
 				8010CE4A240387810096D6BE /* AppDelegate.swift in Sources */,
 				8010CE4C240387810096D6BE /* SceneDelegate.swift in Sources */,
 			);

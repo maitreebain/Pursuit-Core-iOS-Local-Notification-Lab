@@ -16,7 +16,6 @@ class SettingTimerController: UIViewController {
     
     @IBOutlet weak var timerButton: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
