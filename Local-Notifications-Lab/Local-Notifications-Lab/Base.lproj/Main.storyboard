@@ -31,7 +31,7 @@
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="FinishedButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QHe-I5-Ml5"/>
-                                    <segue destination="tKU-7o-W5P" kind="presentation" id="9QZ-uJ-ybZ"/>
+                                    <segue destination="tKU-7o-W5P" kind="show" id="Ymt-RV-dG1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -65,14 +65,14 @@
             <objects>
                 <viewController id="tKU-7o-W5P" customClass="ManageTimeViewController" customModule="Local_Notifications_Lab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dF7-J6-ned">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o8r-xl-Qi9">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="eventCell" textLabel="Qht-dn-hd1" detailTextLabel="ZCs-Az-Xr9" rowHeight="104" style="IBUITableViewCellStyleSubtitle" id="4Xq-7m-0Z9" userLabel="notificationCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notificationCell" textLabel="Qht-dn-hd1" detailTextLabel="ZCs-Az-Xr9" rowHeight="104" style="IBUITableViewCellStyleSubtitle" id="4Xq-7m-0Z9" userLabel="notificationCell">
                                         <rect key="frame" x="0.0" y="28" width="414" height="104"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Xq-7m-0Z9" id="kCH-TA-zHs">
@@ -109,8 +109,9 @@
                         <viewLayoutGuide key="safeArea" id="zcb-ux-vig"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Manage" image="gear" catalog="system" id="9iW-sT-qIa"/>
+                    <navigationItem key="navigationItem" id="9K5-hl-Fb8"/>
                     <connections>
-                        <outlet property="tableView" destination="o8r-xl-Qi9" id="0fh-qg-wK9"/>
+                        <outlet property="tableView" destination="o8r-xl-Qi9" id="KOM-pv-xbP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdR-9m-6hZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

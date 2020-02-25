@@ -32,7 +32,10 @@ class SettingTimerController: UIViewController {
     private func createNotification() {
         let content = UNMutableNotificationContent()
         content.title = textField.text ?? ""
-        content.body = "Notification"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy HH:mm"
+        content.body = "\(dateFormatter.string(from: datePicker.date))"
+        
         content.subtitle = "Alert"
         content.sound = .default
         
@@ -44,15 +47,9 @@ class SettingTimerController: UIViewController {
         
         UNUserNotificationCenter.current().add(request) { (error) in
             if let error = error {
-                DispatchQueue.main.async {
-                    let alertController = UIAlertController(title: "Error", message: "\(error)", preferredStyle: .alert)
-                    self.present(alertController, animated: true)
-                }
+                print("error adding request: \(error)")
             } else {
-                                DispatchQueue.main.async {
-                                                    let alertController = UIAlertController(title: "Success", message: "Added Notification!", preferredStyle: .alert)
-                    self.present(alertController, animated: true)
-                }
+                print("request was successfully added")
             }
         }
     }
@@ -68,6 +65,6 @@ class SettingTimerController: UIViewController {
         createNotification()
         delegate?.didCreateNotification(self)
         let manageTimeVC = ManageTimeViewController()
-        present(manageTimeVC, animated: true, completion: nil)
+        
     }
 }
