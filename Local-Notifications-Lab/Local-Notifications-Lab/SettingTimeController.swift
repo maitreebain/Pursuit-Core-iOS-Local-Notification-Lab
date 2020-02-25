@@ -8,19 +8,19 @@
 
 import UIKit
 
-protocol SettingTimerControllerDelegate {
+protocol SettingTimerControllerDelegate: AnyObject {
     func didCreateNotification(_ viewController: SettingTimerController)
 }
 
 class SettingTimerController: UIViewController {
-
+    
     @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBOutlet weak var textField: UITextField!
     
     @IBOutlet weak var timerButton: UIButton!
     
-    var delegate: SettingTimerController!
+    weak var delegate: SettingTimerControllerDelegate?
     
     private var timeInterval: TimeInterval = Date().timeIntervalSinceNow + 5
     
@@ -36,14 +36,36 @@ class SettingTimerController: UIViewController {
         content.subtitle = "Alert"
         content.sound = .default
         
+        let identifier = UUID().uuidString
         
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                DispatchQueue.main.async {
+                    let alertController = UIAlertController(title: "Error", message: "\(error)", preferredStyle: .alert)
+                    self.present(alertController, animated: true)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    let alertController = UIAlertController(title: "Success", message: "Added Notification!", preferredStyle: .alert)
+                    self.present(alertController, animated: true)
+                }
+            }
+        }
     }
     
     
     @IBAction func datePickerChanged(_ sender: UIDatePicker) {
+        guard sender.date > Date() else {return }
         
+        timeInterval = sender.date.timeIntervalSinceNow
     }
     
     @IBAction func FinishedButtonPressed(_ sender: UIButton) {
+        createNotification()
+        delegate?.didCreateNotification(self)
     }
 }

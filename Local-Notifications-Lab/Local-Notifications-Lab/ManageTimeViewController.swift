@@ -9,13 +9,20 @@
 import UIKit
 
 class ManageTimeViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     private let center = UNUserNotificationCenter.current()
     
     private let pendingNotification = PendingNotification()
     
+    private var notification = [UNNotificationRequest]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +30,7 @@ class ManageTimeViewController: UIViewController {
         tableView.delegate = self
     }
     
-
+    
 }
 
 extension ManageTimeViewController: UITableViewDelegate {
