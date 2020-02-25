@@ -13,7 +13,7 @@ protocol SettingTimerControllerDelegate: AnyObject {
 }
 
 class SettingTimerController: UIViewController {
-    
+
     @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBOutlet weak var textField: UITextField!
@@ -49,8 +49,8 @@ class SettingTimerController: UIViewController {
                     self.present(alertController, animated: true)
                 }
             } else {
-                DispatchQueue.main.async {
-                    let alertController = UIAlertController(title: "Success", message: "Added Notification!", preferredStyle: .alert)
+                                DispatchQueue.main.async {
+                                                    let alertController = UIAlertController(title: "Success", message: "Added Notification!", preferredStyle: .alert)
                     self.present(alertController, animated: true)
                 }
             }
@@ -67,5 +67,7 @@ class SettingTimerController: UIViewController {
     @IBAction func FinishedButtonPressed(_ sender: UIButton) {
         createNotification()
         delegate?.didCreateNotification(self)
+        let manageTimeVC = ManageTimeViewController()
+        present(manageTimeVC, animated: true, completion: nil)
     }
 }
