@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol SettingTimerControllerDelegate {
+    func didCreateNotification(_ viewController: SettingTimerController)
+}
+
 class SettingTimerController: UIViewController {
 
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -16,15 +20,30 @@ class SettingTimerController: UIViewController {
     
     @IBOutlet weak var timerButton: UIButton!
     
+    var delegate: SettingTimerController!
+    
+    private var timeInterval: TimeInterval = Date().timeIntervalSinceNow + 5
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textField.delegate = self
     }
-
-
-}
-
-extension SettingTimerController: UITextFieldDelegate {
     
+    private func createNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = textField.text ?? ""
+        content.body = "Notification"
+        content.subtitle = "Alert"
+        content.sound = .default
+        
+        
+    }
+    
+    
+    @IBAction func datePickerChanged(_ sender: UIDatePicker) {
+        
+    }
+    
+    @IBAction func FinishedButtonPressed(_ sender: UIButton) {
+    }
 }

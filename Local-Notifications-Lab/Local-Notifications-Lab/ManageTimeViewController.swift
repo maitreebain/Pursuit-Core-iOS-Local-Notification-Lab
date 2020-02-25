@@ -20,8 +20,12 @@ class ManageTimeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        tableView.delegate = self
     }
     
 
+}
+
+extension ManageTimeViewController: UITableViewDelegate {
+    
 }
